@@ -1,8 +1,8 @@
-import { createStore, Store } from "redux";
-import { wrapStore } from "webext-redux";
-import { config } from "../../config";
-import { saveState, loadState, reducers } from "./store";
-import { IAppState } from "./store/interfaces/store";
+import { createStore, Store } from 'redux';
+import { wrapStore } from 'webext-redux';
+import { config } from '../../config';
+import { saveState, loadState, reducers } from './store';
+import { IAppState } from './store/interfaces/store';
 
 const autoSaveAppState = (appStore: Store<IAppState>) => {
   chrome.tabs.onRemoved.addListener(() => saveState(appStore.getState()));

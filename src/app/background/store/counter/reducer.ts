@@ -1,9 +1,9 @@
-import { Reducer } from "redux";
-import { ICounter } from "./interfaces/reducer";
-import { CounterActions } from "./interfaces/actions";
+import { Reducer } from 'redux';
+import { ICounter } from './interfaces/reducer';
+import { CounterActions } from './interfaces/actions';
 
 const counterState: ICounter = {
-  count: 0,
+  count: 0
 };
 
 const counter: Reducer<ICounter, CounterActions> = (
@@ -13,9 +13,9 @@ const counter: Reducer<ICounter, CounterActions> = (
   const { type, payload } = action;
 
   switch (type) {
-    case "INCREMENT":
+    case 'INCREMENT':
       return { ...state, count: state.count + (payload || 1) };
-    case "DECREMENT":
+    case 'DECREMENT':
       return { ...state, count: state.count - (payload || 1) };
     default:
       return state;

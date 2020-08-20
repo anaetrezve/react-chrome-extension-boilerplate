@@ -1,6 +1,6 @@
-import * as React from "react";
-import styled from "styled-components";
-import Counter from "../../containers/counter/Counter";
+import * as React from 'react';
+import styled from 'styled-components';
+import Counter from '../../containers/counter/Counter';
 
 export interface ContentScriptAppProps {}
 

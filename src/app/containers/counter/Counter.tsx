@@ -1,8 +1,8 @@
-import * as React from "react";
-import styled from "styled-components";
-import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement } from "../../background/store/counter";
-import { IAppState } from "../../background/store/interfaces/store";
+import * as React from 'react';
+import styled from 'styled-components';
+import { useSelector, useDispatch } from 'react-redux';
+import { increment, decrement } from '../../background/store/counter';
+import { IAppState } from '../../background/store/interfaces/store';
 
 export interface CounterProps {}
 

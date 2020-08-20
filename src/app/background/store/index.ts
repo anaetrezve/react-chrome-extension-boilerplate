@@ -1,10 +1,10 @@
-import { combineReducers } from "redux";
-import { counter } from "../../background/store/counter";
-import { OnSuccess, OnError, IAppState } from "./interfaces/store";
+import { combineReducers } from 'redux';
+import { counter } from '../../background/store/counter';
+import { OnSuccess, OnError, IAppState } from './interfaces/store';
 
 export const loadState = (): IAppState | undefined => {
   try {
-    const serializedState = localStorage.getItem("appstate");
+    const serializedState = localStorage.getItem('appstate');
 
     if (serializedState === null) {
       return undefined;
@@ -26,7 +26,7 @@ export const saveState = (
   try {
     const serializedState = JSON.stringify(appstate);
 
-    localStorage.setItem("appstate", serializedState);
+    localStorage.setItem('appstate', serializedState);
     success();
   } catch (e) {
     error(e);
@@ -34,7 +34,7 @@ export const saveState = (
 };
 
 const reducers = combineReducers<IAppState>({
-  counter,
+  counter
 });
 
 export { reducers };

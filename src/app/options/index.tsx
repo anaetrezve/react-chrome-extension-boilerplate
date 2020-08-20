@@ -1,8 +1,8 @@
-import * as React from "react";
-import { Store } from "webext-redux";
-import { Provider } from "react-redux";
-import ReactDOM from "react-dom";
-import OptionsApp from "./containers/OptionsApp";
+import * as React from 'react';
+import { Store } from 'webext-redux';
+import { Provider } from 'react-redux';
+import ReactDOM from 'react-dom';
+import OptionsApp from './containers/OptionsApp';
 
 const store = new Store();
 
@@ -11,6 +11,6 @@ store.ready().then(() => {
     <Provider store={store}>
       <OptionsApp />
     </Provider>,
-    document.getElementById("options-root")
+    document.getElementById('options-root')
   );
 });

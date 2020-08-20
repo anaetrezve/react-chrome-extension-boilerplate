@@ -1,11 +1,11 @@
-import { CounterPayload } from "./interfaces/actions";
+import { CounterPayload } from './interfaces/actions';
 
 export const increment = (payload: CounterPayload = 1) => ({
-  type: "INCREMENT",
-  payload,
+  type: 'INCREMENT',
+  payload
 });
 
 export const decrement = (payload: CounterPayload = 1) => ({
-  type: "DECREMENT",
-  payload,
+  type: 'DECREMENT',
+  payload
 });
