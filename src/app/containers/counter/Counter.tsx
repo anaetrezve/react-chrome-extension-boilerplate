@@ -24,18 +24,29 @@ const Counter: React.FC<CounterProps> = () => {
 export default Counter;
 
 const CounterWrapper = styled.div`
-  width: 500px;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  --border-size: 0.125rem;
+  --duration: 250ms;
+  --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --font-family: monospace;
+  --color-primary: white;
+  --color-secondary: black;
+  --color-tertiary: dodgerblue;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --space: 1rem;
+
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  width: 350px;
+  height: 200px;
+  padding: 10px 25px;
+  background: #cfd8dc;
 `;
 
 const CounterDisplay = styled.div`
   display: flex;
   justify-content: center;
-  padding: 5px;
+  padding: 10px;
   margin: 5px;
   align-items: center;
   font-size: 36px;
@@ -44,24 +55,58 @@ const CounterDisplay = styled.div`
 
 const ButtonWrapper = styled.div`
   display: flex;
+  width: 100%;
+  box-shadow: var(--shadow) 4px 4px;
+
+  :hover button:focus:not(:hover) {
+    flex-grow: 1;
+    color: var(--color-secondary);
+    background-color: var(--color-primary);
+    outline-color: var(--color-tertiary);
+  }
 `;
 
 const Button = styled.button`
-  padding: 15px 20px;
-  display: inline-flex;
-  margin: 0px 5px;
-  justify-content: center;
-  align-items: center;
-  font-size: 22px;
-  background: rgba(27, 188, 194, 1);
-  border: 0 none;
-  outline: 0 none;
+  flex-grow: 1;
+  cursor: pointer;
+  position: relative;
+  padding: calc(var(--space) / 1.125) var(--space) var(--space);
+  border: var(--border-size) solid black;
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  font-size: 1.5rem;
+  font-family: var(--font-family);
+  text-transform: lowercase;
+  text-shadow: var(--shadow) 2px 2px;
+  transition: flex-grow var(--duration) var(--ease);
 
-  &:hover {
-    background: rgba(27, 188, 194, 0.8);
+  + button {
+    border-left: var(--border-size) solid black;
+    margin-left: calc(var(--border-size) * -1);
   }
 
-  &:active {
-    background: #169499;
+  :hover,
+  :focus {
+    flex-grow: 2;
+    color: white;
+    outline: none;
+    text-shadow: none;
+    background-color: var(--color-secondary);
+  }
+
+  :focus {
+    outline: var(--border-size) dashed var(--color-primary);
+    outline-offset: calc(var(--border-size) * -3);
+  }
+
+  /* .multi-button:hover button:focus:not(:hover) {
+    flex-grow: 1;
+    color: var(--color-secondary);
+    background-color: var(--color-primary);
+    outline-color: var(--color-tertiary);
+  } */
+
+  :active {
+    transform: translateY(var(--border-size));
   }
 `;

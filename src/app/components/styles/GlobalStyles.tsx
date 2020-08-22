@@ -13,8 +13,11 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	body {
-		display: flex;
-		margin: 0;
+		height: 100vh;
+		margin: 0 auto;
+		display: grid;
+		place-items: center;
+		max-width: 700px;
 	}
 `;
 
